@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-container": "#ffb759", "surface-container": "#eceef0", "surface-container-high": "#e6e8ea", "on-tertiary-fixed": "#2a1700", "on-error-container": "#93000a", "on-error": "#ffffff", "surface": "#f7f9fb", "surface-tint": "#5148d7", "primary-fixed-dim": "#c3c0ff", "surface-container-lowest": "#ffffff", "on-surface-variant": "#464554", "secondary-fixed-dim": "#4edea3", "on-tertiary": "#ffffff", "on-primary-container": "#c1beff", "inverse-surface": "#2d3133", "on-primary-fixed": "#100069", "tertiary-fixed-dim": "#ffb95f", "tertiary-fixed": "#ffddb8", "background": "#f7f9fb", "on-secondary-container": "#00714d", "primary-fixed": "#e3dfff", "error-container": "#ffdad6", "on-primary-fixed-variant": "#372abf", "tertiary-container": "#744800", "secondary-container": "#6cf8bb", "on-surface": "#191c1e", "error": "#ba1a1a", "surface-bright": "#f7f9fb", "secondary-fixed": "#6ffbbe", "inverse-primary": "#c3c0ff", "surface-container-highest": "#e0e3e5", "outline": "#777586", "on-secondary-fixed": "#002113", "tertiary": "#553300", "surface-container-low": "#f2f4f6", "on-background": "#191c1e", "on-secondary": "#ffffff", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#005236", "outline-variant": "#c7c4d7", "on-tertiary-fixed-variant": "#653e00", "inverse-on-surface": "eff1f3", "surface-dim": "#d8dadc", "primary": "#2a14b4", "primary-container": "#4338ca", "secondary": "#006c49", "surface-variant": "#e0e3e5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "margin": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "title-sm": ["Inter"], "headline-sm": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "code-inline": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "code-inline": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script><link rel="stylesheet" href="campuspilot-theme.css"/>
+</head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 flex items-center justify-between px-space-md"><div class="flex items-center gap-space-sm"><img alt="CampusPilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XnIvgOH7S4h8glboiG-Yg5OHh17LnNmL4yIY-grQut22wgMHew0GGy73B4KYUgdGKNGAavbE05WXAjO1MvJlNp-jRKGi1yJtIayRWYXidR4XoTnLsJHMwpxF2cViaLyHq21crQWUTMmwu8o26qh8GFBKzNigkVlDMROZ2jGl82_0PTC_Y1vk_pB3RO9848k3h4ZcMqFUMgVIlRY6ajO0jOTdZle1UWnTk8RliqUAkKqVv9pjRw2C8BtKl3"/><span class="font-title-md text-title-md text-on-surface">CampusPilot</span></div><span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">AI Copilot</span></div><nav class="flex flex-col gap-1 px-space-sm mt-space-sm" data-active-classes="bg-primary-container text-on-primary font-title-sm shadow-sm"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="overview" href="overview.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none">dashboard</span><span class="font-body-md text-body-md group-hover:font-title-sm">Overview</span></div></a><a class="flex items-center juflex items-center justify-between px-space-md py-2.5 rounded-lg transition-all groupstant" href="ai_assistant.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none text-surface-tint">auto_awesome</span><span class="font-body-md text-body-md group-hover:font-title-sm">AI Assistant</span></div><span class="px-1.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">New</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="assignments" href="assignments.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none">checklist</span><span class="font-body-md text-body-md group-hover:font-title-sm">Assignments</span></div><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">4 due</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="exams" aria-current="page" href="exams.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none">school</span><span class="font-body-md text-body-md group-hover:font-title-sm">Exams</span></div><span class="w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="study-planner" href="study_planner.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none">calendar_today</span><span class="font-body-md text-body-md group-hover:font-title-sm">Study Planner</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="progress" href="progress.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none">trending_up</span><span class="font-body-md text-body-md group-hover:font-title-sm">Progress</span></div></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all group" data-path="settings" href="settings.html"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-lg leading-none">tune</span><span class="font-body-md text-body-md group-hover:font-title-sm">Settings</span></div></a></nav></div><div class="p-space-sm mb-space-sm"><div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer"><div class="relative flex-shrink-0"><img alt="Profile" class="w-9 h-9 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiWFhYP9ZfBGK_RHyC96fAycM8Twcs504qaEbAdNvNOmIQ5CS0Y9StZJP4nUJOMmOeehTw-61BuiDjWG0Rf9FkIPbaWOOh5H0SsGh8hz8--_96NvhGLjz6FKQR7IEtoWyGd-nJeVnC8dr-RRtToO2fWOOp3z49dWtr3k_2naY-5kNxfFDK_x5ubGjB_tjoPhtAZhN3PumWk4W1uFIL3zoaHvzoFVlyt5CFX9jIKxnHCcOX3xgWQgUJrQ"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-title-sm text-title-sm text-on-surface truncate">Kishor</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">B.Tech CS • Sem 6</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="CampusPilot Logo" class="h-8 w-auto object-contain md:hidden" src="https://lh3.googleusercontent.com/aida/AEtjO1XnIvgOH7S4h8glboiG-Yg5OHh17LnNmL4yIY-grQut22wgMHew0GGy73B4KYUgdGKNGAavbE05WXAjO1MvJlNp-jRKGi1yJtIayRWYXidR4XoTnLsJHMwpxF2cViaLyHq21crQWUTMmwu8o26qh8GFBKzNigkVlDMROZ2jGl82_0PTC_Y1vk_pB3RO9848k3h4ZcMqFUMgVIlRY6ajO0jOTdZle1UWnTk8RliqUAkKqVv9pjRw2C8BtKl3"/><div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm"><span class="text-on-surface font-title-sm text-title-sm">CampusPilot</span><span class="material-symbols-outlined text-sm leading-none">chevron_right</span><span class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Workspace</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center bg-surface-container-lowest px-3 py-1.5 rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.03)] w-64 justify-between"><div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-base leading-none">search</span><span class="font-body-sm text-body-sm">Search tasks, topics...</span></div><kbd class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-inline text-label-sm">⌘K</kbd></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-fixed text-primary hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all" type="button"><span class="material-symbols-outlined text-sm leading-none">arrow_back_ios_new</span><span class="font-label-md text-label-md">Quick Ask</span></button><button class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl leading-none">notifications</span><span class="absolute top-1.5 right-1.5 min-w-[16px] h-4 px-1 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">3</span></button><div class="flex items-center gap-2 pl-2 cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiWFhYP9ZfBGK_RHyC96fAycM8Twcs504qaEbAdNvNOmIQ5CS0Y9StZJP4nUJOMmOeehTw-61BuiDjWG0Rf9FkIPbaWOOh5H0SsGh8hz8--_96NvhGLjz6FKQR7IEtoWyGd-nJeVnC8dr-RRtToO2fWOOp3z49dWtr3k_2naY-5kNxfFDK_x5ubGjB_tjoPhtAZhN3PumWk4W1uFIL3zoaHvzoFVlyt5CFX9jIKxnHCcOX3xgWQgUJrQ"/><span class="material-symbols-outlined text-on-surface-variant text-base hidden sm:block">arrow_drop_down</span></div></div></header><main class="relative pt-16 w-full min-h-screen bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Top Action & Meta Bar -->
+<div class="px-space-md lg:px-space-xl pt-space-lg pb-space-md flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm uppercase tracking-wider">Academic Tracker</span>
+<span class="text-on-surface-variant font-label-md text-label-md">• Fall Semester 2026</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Exams &amp; Midterm Tracker</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Manage exam schedules, syllabus coverage, topic mastery, and real-time AI revision readiness.
+      </p>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary-fixed/30 shadow-sm transition-all group cursor-pointer" id="openSchedulePlanBtn" type="button">
+<span class="material-symbols-outlined text-surface-tint text-base group-hover:scale-110 transition-transform">auto_awesome</span>
+<span class="font-title-sm text-title-sm">Generate Revision Schedule</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container shadow-md transition-all cursor-pointer" id="openAddExamModalBtn" type="button">
+<span class="material-symbols-outlined text-lg leading-none">add</span>
+<span class="font-title-sm text-title-sm">+ Add Exam</span>
+</button>
+</div>
+</div>
+<div class="px-space-md lg:px-space-xl pb-space-xl flex flex-col gap-space-lg">
+<!-- Section 1: Summary Metric Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Next Upcoming</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1 truncate">CS412 Midterm</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl">timer</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-body-sm font-body-sm">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">4 days left</span>
+<span class="text-on-surface-variant">Fri, Oct 27 • 10 AM</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-error"></div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Scheduled Exams</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">4 Total</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl">event_upcoming</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>2 Midterms • 2 Finals</span>
+<span class="text-secondary font-semibold font-label-md text-label-md">100% Tracked</span>
+</div>
+<div class="h-1 bg-surface-container-high rounded-full overflow-hidden mt-2">
+<div class="h-full bg-primary rounded-full w-2/3"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Avg Readiness</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface">64%</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center">
+<span class="material-symbols-outlined text-xs">arrow_upward</span>+8%
+              </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl">analytics</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Target: 85% by Finals</span>
+<span class="font-code-inline text-label-sm text-primary">On Velocity</span>
+</div>
+<div class="h-1 bg-surface-container-high rounded-full overflow-hidden mt-2">
+<div class="h-full bg-secondary rounded-full w-[64%]"></div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Study Load</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-1">14 hrs left</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-xl">psychology</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Recommended 2.8h / day</span>
+<span class="text-tertiary font-semibold font-label-md text-label-md">5 Active Tasks</span>
+</div>
+<div class="h-1 bg-surface-container-high rounded-full overflow-hidden mt-2">
+<div class="h-full bg-tertiary-container rounded-full w-1/2"></div>
+</div>
+</div>
+</div>
+<!-- Section 2: Chronological Timeline Strip -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-space-sm mb-space-sm gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">timeline</span>
+<h2 class="font-title-md text-title-md text-on-surface">Fall 2026 Examination Horizon</h2>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">Next 60 Days Projection</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm relative">
+<!-- Item 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between relative overflow-hidden group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">4d left</span>
+<span class="font-code-inline text-label-sm text-on-surface-variant">Oct 27</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface truncate">CS412 Cybersecurity</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Midterm Exam (40%)</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">72% Ready</span>
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+</div>
+<!-- Item 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between relative overflow-hidden group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">9d left</span>
+<span class="font-code-inline text-label-sm text-on-surface-variant">Nov 01</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface truncate">CS408 Distributed Systems</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Midterm Exam (35%)</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-bold">45% Ready</span>
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-on-tertiary-container"></div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between relative overflow-hidden group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">23d left</span>
+<span class="font-code-inline text-label-sm text-on-surface-variant">Nov 15</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface truncate">CS308 Database Systems</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Midterm Exam (30%)</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold">60% Ready</span>
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+</div>
+<!-- Item 4 -->
+<div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between relative overflow-hidden group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">50d left</span>
+<span class="font-code-inline text-label-sm text-on-surface-variant">Dec 12</span>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface truncate">CS402 Cloud Computing</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Final Exam (50%)</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">30% Ready</span>
+<div class="w-16 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-outline-variant h-full rounded-full" style="width: 30%"></div>
+</div>
+</div>
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-outline"></div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Layout: 2 Columns (Exams Detail vs AI Tools) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Detailed Exam Cards (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Active Courses &amp; Detailed Prep</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">3 Active</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm">All</button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">Midterms</button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">Finals</button>
+</div>
+</div>
+<!-- Exam Card 1: CS412 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center font-bold text-lg flex-shrink-0">
+                CS
+              </div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">CS412 Cybersecurity &amp; Cryptography</h3>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold animate-pulse">4 days left</span>
+</div>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-body-sm text-body-sm flex-wrap">
+<span class="font-title-sm text-title-sm text-primary">Midterm Exam (40% Weightage)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm leading-none">calendar_clock</span> Friday, Oct 27, 2026</span>
+<span>•</span>
+<span>10:00 AM – 12:00 PM (2 hrs)</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm leading-none text-surface-tint">location_on</span>
+<span>Turing Hall 302 • Canvas LockDown Proctored</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between sm:justify-start gap-1 bg-surface-container-low p-3 rounded-xl min-w-[130px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Readiness</span>
+<div class="font-headline-md text-headline-md text-primary font-bold">72%</div>
+<span class="text-secondary font-label-sm text-label-sm flex items-center">
+<span class="material-symbols-outlined text-xs">check_circle</span> Target: 80%
+              </span>
+</div>
+</div>
+<!-- Progress Bar Representation -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Overall Syllabus Coverage</span>
+<span>18 of 25 Modules Verified</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full" style="width: 50%" title="Mastered (50%)"></div>
+<div class="bg-primary h-full" style="width: 22%" title="Reviewing (22%)"></div>
+<div class="bg-on-tertiary-container h-full" style="width: 15%" title="In Progress (15%)"></div>
+<div class="bg-surface-container-highest h-full" style="width: 13%" title="Unprepared (13%)"></div>
+</div>
+</div>
+<!-- Topic Breakdown & Mastery Chips -->
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-title-sm text-title-sm text-on-surface">Curated Syllabus Mastery Breakdown</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">RSA &amp; Public Key Cryptography</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">90% Mastered</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">TLS 1.3 Handshake Protocol</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">80% Solid</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Firewall Rule Evaluation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">65% Progress</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Buffer Overflow Exploits (Stack)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">40% Needs Focus</span>
+</div>
+</div>
+</div>
+<!-- AI Copilot Insight Callout -->
+<div class="p-3.5 rounded-xl bg-primary-fixed/25 flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-surface-tint shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-lg leading-none">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm text-on-primary-fixed">Copilot Academic Assessment</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-tint text-on-primary text-[10px] font-bold uppercase">Priority</span>
+</div>
+<p class="text-on-surface">
+                Synthesized 2 high-yield flashcard decks from Prof. Harrison's lectures. Suggested allocation: <strong>60-min deep dive on Buffer Overflows</strong> before Thursday evening.
+              </p>
+</div>
+</div>
+<!-- Interactive Footer Actions -->
+<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3.5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">quiz</span>
+<span>Practice Mock Quiz</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center gap-1.5 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">assignment_turned_in</span>
+<span>AI Revision Plan</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant font-title-sm text-title-sm flex items-center gap-1.5 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">description</span>
+<span>Formula Sheet</span>
+</button>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">alarm</span> Last synced 2h ago
+            </span>
+</div>
+</div>
+<!-- Exam Card 2: CS408 -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-lg flex-shrink-0">
+                CS
+              </div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">CS408 Distributed Systems</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">9 days left</span>
+</div>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-body-sm text-body-sm flex-wrap">
+<span class="font-title-sm text-title-sm text-tertiary">Midterm Exam (35% Weightage)</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm leading-none">calendar_clock</span> Wednesday, Nov 01, 2026</span>
+<span>•</span>
+<span>02:00 PM – 04:00 PM (2 hrs)</span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm leading-none text-surface-tint">location_on</span>
+<span>Hopper Hall 104 • In-Person Written Exam</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col items-end justify-between sm:justify-start gap-1 bg-surface-container-low p-3 rounded-xl min-w-[130px]">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Readiness</span>
+<div class="font-headline-md text-headline-md text-on-tertiary-container font-bold">45%</div>
+<span class="text-tertiary font-label-sm text-label-sm flex items-center">
+<span class="material-symbols-outlined text-xs">pending</span> Action required
+              </span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Overall Syllabus Coverage</span>
+<span>10 of 22 Modules Verified</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 25%" title="Completed"></div>
+<div class="bg-on-tertiary-container h-full" style="width: 20%" title="Partial"></div>
+<div class="bg-surface-container-highest h-full" style="width: 55%" title="Unstarted"></div>
+</div>
+</div>
+<!-- Topic Breakdown & Mastery Chips -->
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-title-sm text-title-sm text-on-surface">Curated Syllabus Mastery Breakdown</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Paxos &amp; Raft Consensus</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">35% Urgent</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">Vector Clocks &amp; Lamport Timestamps</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">60% In Review</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">CAP Theorem &amp; Consistency Models</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">70% Confident</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 truncate">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<span class="font-body-md text-body-md text-on-surface truncate">gRPC and Protobuf Architecture</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">20% Not Started</span>
+</div>
+</div>
+</div>
+<!-- AI Insight -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-surface-tint shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-lg leading-none">tips_and_updates</span>
+</div>
+<div class="flex flex-col gap-1 text-body-sm font-body-sm">
+<span class="font-title-sm text-title-sm text-on-surface">Targeted Strategy</span>
+<p class="text-on-surface-variant">
+                Schedule 2 focused deep work sessions for Raft leader election algorithm and split-brain recovery before the weekend.
+              </p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-2 flex-wrap gap-2">
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3.5 py-2 rounded-lg bg-primary-fixed text-primary hover:bg-primary-fixed-dim font-title-sm text-title-sm flex items-center gap-1.5 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">quiz</span>
+<span>Practice Mock Quiz</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center gap-1.5 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">summarize</span>
+<span>Generate Study Guide</span>
+</button>
+<button class="px-3 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant font-title-sm text-title-sm flex items-center gap-1.5 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-base">folder_open</span>
+<span>Syllabus Notes</span>
+</button>
+</div>
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Target 5h this week
+            </span>
+</div>
+</div>
+<!-- Exam Card 3: CS308 Compact Horizon -->
+<div class="p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-lg flex-shrink-0">
+              DB
+            </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">CS308 Database Systems</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">23 days left</span>
+</div>
+<p class="text-on-surface-variant font-body-sm text-body-sm mt-1">
+                Midterm Exam • Wednesday, Nov 15 • 10:00 AM • B+ Trees, Normalization, ACID Transactions
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+<div class="flex flex-col items-end">
+<span class="font-title-sm text-title-sm text-secondary font-bold">60% Prepared</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">8 days to prep start</span>
+</div>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-sm text-title-sm flex items-center gap-1 transition-colors cursor-pointer" type="button">
+<span>Plan Revision</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Assistant Tools & Heatmap (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- AI Readiness Check Tool with Voice Integration -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-tint text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-lg leading-none">mic</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Alexa+ Oral Check</h3>
+</div>
+<span class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span> Echo Studio Ready
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Run a lightning 5-minute spoken exam simulation to test your conceptual recall before your proctored test.
+          </p>
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm text-on-surface">Target: CS412 Concepts</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">5 Questions</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Alexa will ask scenario-based questions on Public Key Cryptography and evaluate your spoken answers in real-time.
+            </p>
+</div>
+<button class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-primary to-surface-tint text-on-primary font-title-sm text-title-sm shadow-md flex items-center justify-center gap-2 hover:opacity-95 transition-opacity cursor-pointer" id="startOralQuizBtn" type="button">
+<span class="material-symbols-outlined text-base">mic</span>
+<span>Start Spoken Drill with Alexa</span>
+</button>
+</div>
+<!-- Topic Weakness Heatmap Mini Chart -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface">Critical Weakness Heatmap</h3>
+<span class="font-label-sm text-label-sm text-error font-semibold">Needs Immediate Focus</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Algorithms that need prioritized repetition based on past quizzes and practice question error rates.
+          </p>
+<!-- Visual Heatmap Rows -->
+<div class="flex flex-col gap-2.5 mt-1">
+<!-- Row 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface font-medium truncate">Buffer Overflow Exploits</span>
+<span class="text-error font-bold font-code-inline text-label-sm">40% Accuracy</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface font-medium truncate">Paxos Consensus Algorithm</span>
+<span class="text-error font-bold font-code-inline text-label-sm">35% Accuracy</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface font-medium truncate">Lamport Logical Clocks</span>
+<span class="text-on-tertiary-container font-bold font-code-inline text-label-sm">58% Accuracy</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 58%"></div>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-on-surface font-medium truncate">Firewall Rule Evaluation</span>
+<span class="text-on-tertiary-container font-bold font-code-inline text-label-sm">65% Accuracy</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-sm text-title-sm transition-colors text-center cursor-pointer" type="button">
+            Generate Focused Weakness Deck
+          </button>
+</div>
+<!-- Weekly Study Pace & Hours Visualizer -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface">Target Revision Pace</h3>
+<span class="font-code-inline text-label-sm text-primary font-bold">14 hrs remaining</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low p-3 rounded-xl">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface">2.8 hrs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily Recommended Goal</span>
+</div>
+<!-- Mini visual chart inline -->
+<div class="flex items-end gap-1.5 h-12">
+<div class="w-3 bg-primary rounded-t" style="height: 60%" title="Mon: 2.2h"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 85%" title="Tue: 3.1h"></div>
+<div class="w-3 bg-primary rounded-t" style="height: 70%" title="Wed: 2.5h"></div>
+<div class="w-3 bg-primary-fixed rounded-t" style="height: 95%" title="Thu (Target): 3.5h"></div>
+<div class="w-3 bg-surface-container-highest rounded-t" style="height: 40%" title="Fri: Planned"></div>
+<div class="w-3 bg-surface-container-highest rounded-t" style="height: 50%" title="Sat: Planned"></div>
+<div class="w-3 bg-surface-container-highest rounded-t" style="height: 30%" title="Sun: Planned"></div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+<span>Ahead of pace for CS412. CS408 needs +1.5h boost.</span>
+</div>
+</div>
+<!-- Exam Room & Proctored Resources Quick Link -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<span class="font-title-sm text-title-sm text-on-surface">Exam Day Checklist</span>
+<div class="flex flex-col gap-2 mt-1">
+<label class="flex items-center gap-2.5 text-body-sm font-body-sm text-on-surface cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span>Canvas LockDown Browser installed &amp; tested</span>
+</label>
+<label class="flex items-center gap-2.5 text-body-sm font-body-sm text-on-surface cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span>Student ID Card scanned into mobile wallet</span>
+</label>
+<label class="flex items-center gap-2.5 text-body-sm font-body-sm text-on-surface cursor-pointer">
+<input class="rounded text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span>Print 1-page approved formula sheet (Turing Hall)</span>
+</label>
+<label class="flex items-center gap-2.5 text-body-sm font-body-sm text-on-surface cursor-pointer">
+<input class="rounded text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+<span>Submit accommodations clearance if needed</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Exam Slide-Out Modal / Drawer (Interactive via vanilla JS) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex items-center justify-center p-4" id="addExamModal">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-xl max-h-[921px] overflow-y-auto flex flex-col">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg leading-none">school</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Schedule New Exam</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Add course details, grade weightage, and syllabus modules.</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer" id="closeAddExamModalBtn" type="button">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Modal Form Body -->
+<form class="p-space-lg flex flex-col gap-space-md" id="examScheduleForm">
+<!-- Row 1: Course Info -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Course Code</label>
+<input class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. CS412 or MATH301" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Exam Type</label>
+<select class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary">
+<option value="midterm">Midterm Exam</option>
+<option value="final">Final Exam</option>
+<option value="quiz">Major Quiz / Assessment</option>
+<option value="lab">Lab Practical Exam</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Course Title</label>
+<input class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Cryptography and Network Security" required="" type="text"/>
+</div>
+<!-- Row 2: Date, Time, Duration -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Date</label>
+<input class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" required="" type="date" value="2026-11-20"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Start Time</label>
+<input class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" required="" type="time" value="10:00"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Duration</label>
+<input class="px-3 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" placeholder="120 mins" type="text"/>
+</div>
+</div>
+<!-- Row 3: Venue & Weightage -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Venue / Platform</label>
+<input class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Turing Hall 302 or Online" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Grade Weightage (%)</label>
+<input class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" max="100" min="1" placeholder="e.g. 35" type="number"/>
+</div>
+</div>
+<!-- Topics Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-sm text-title-sm text-on-surface">Key Syllabus Topics (comma separated)</label>
+<input class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Public Key Crypto, RSA, TLS Handshake, Firewalls" type="text"/>
+</div>
+<!-- Target Readiness Slider -->
+<div class="flex flex-col gap-1.5 bg-surface-container-low p-3 rounded-xl">
+<div class="flex justify-between items-center">
+<label class="font-title-sm text-title-sm text-on-surface">Target Readiness Benchmark</label>
+<span class="font-code-inline text-title-sm text-primary font-bold" id="readinessValue">85%</span>
+</div>
+<input class="accent-primary w-full cursor-pointer" id="readinessRange" max="100" min="50" type="range" value="85"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">The AI revision planner will pace study sessions to reach this readiness 48h before the exam.</span>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-title-sm text-title-sm transition-colors cursor-pointer" id="cancelAddExamBtn" type="button">
+            Cancel
+          </button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-sm text-title-sm shadow-sm transition-all cursor-pointer" type="submit">
+            Schedule Exam
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Voice Simulation Toast Notification (Interactive) -->
+<div class="fixed bottom-6 right-6 z-50 bg-surface-container-lowest text-on-surface rounded-2xl shadow-xl p-space-md max-w-sm hidden flex-col gap-2" id="voiceSimulationToast">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary animate-ping"></span>
+<span class="font-title-sm text-title-sm text-on-surface">Oral Exam Drill Live</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface cursor-pointer" id="closeVoiceToastBtn">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      "Echo Studio: In your own words, explain how Diffie-Hellman establishes a shared secret over an insecure channel?"
+    </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm font-mono">Listening...</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Speak clearly into microphone</span>
+</div>
+</div>
+</div>
+<script>
+  // Interactive Modal Handlers
+  const modal = document.getElementById('addExamModal');
+  const openModalBtn = document.getElementById('openAddExamModalBtn');
+  const closeModalBtn = document.getElementById('closeAddExamModalBtn');
+  const cancelBtn = document.getElementById('cancelAddExamBtn');
+  const form = document.getElementById('examScheduleForm');
+
+  const rangeInput = document.getElementById('readinessRange');
+  const rangeDisplay = document.getElementById('readinessValue');
+
+  if (rangeInput && rangeDisplay) {
+    rangeInput.addEventListener('input', (e) => {
+      rangeDisplay.textContent = e.target.value + '%';
+    });
+  }
+
+  function showModal() {
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function hideModal() {
+    if (modal) modal.classList.add('hidden');
+  }
+
+  if (openModalBtn) openModalBtn.addEventListener('click', showModal);
+  if (closeModalBtn) closeModalBtn.addEventListener('click', hideModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', hideModal);
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) hideModal();
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      hideModal();
+    });
+  }
+
+  // Voice Drill Toast Simulation
+  const startOralBtn = document.getElementById('startOralQuizBtn');
+  const voiceToast = document.getElementById('voiceSimulationToast');
+  const closeVoiceToastBtn = document.getElementById('closeVoiceToastBtn');
+
+  if (startOralBtn && voiceToast) {
+    startOralBtn.addEventListener('click', () => {
+      voiceToast.classList.remove('hidden');
+      voiceToast.classList.add('flex');
+    });
+  }
+
+  if (closeVoiceToastBtn && voiceToast) {
+    closeVoiceToastBtn.addEventListener('click', () => {
+      voiceToast.classList.add('hidden');
+      voiceToast.classList.remove('flex');
+    });
+  }
+
+  // AI Revision Plan Button Micro-interaction
+  const planBtn = document.getElementById('openSchedulePlanBtn');
+  if (planBtn) {
+    planBtn.addEventListener('click', () => {
+      const origText = planBtn.innerHTML;
+      planBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">refresh</span> Generating 14h Plan...';
+      setTimeout(() => {
+        planBtn.innerHTML = '<span class="material-symbols-outlined text-sm text-secondary">check</span> Schedule Synced!';
+        setTimeout(() => {
+          planBtn.innerHTML = origText;
+        }, 2500);
+      }, 1000);
+    });
+  }
+</script></main></div><script>
+(() => {
+  const routes = {
+    overview: 'overview.html',
+    'ai-assistant': 'ai_assistant.html',
+    assignments: 'assignments.html',
+    exams: 'exams.html',
+    'study-planner': 'study_planner.html',
+    progress: 'progress.html',
+    settings: 'settings.html'
+  };
+  document.querySelectorAll('nav a[data-path]').forEach(link => {
+    const destination = routes[link.dataset.path];
+    if (destination) link.href = destination;
+  });
+})();
+</script>
+</body></html>

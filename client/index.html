@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusPilot — AI Student Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#ffb759", "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
+              "on-tertiary-fixed": "#2a1700", "on-error-container": "#93000a", "on-error": "#ffffff",
+              "surface": "#f7f9fb", "surface-tint": "#5148d7", "primary-fixed-dim": "#c3c0ff",
+              "surface-container-lowest": "#ffffff", "on-surface-variant": "#464554", "secondary-fixed-dim": "#4edea3",
+              "on-tertiary": "#ffffff", "on-primary-container": "#c1beff", "inverse-surface": "#2d3133",
+              "on-primary-fixed": "#100069", "tertiary-fixed-dim": "#ffb95f", "tertiary-fixed": "#ffddb8",
+              "background": "#f7f9fb", "on-secondary-container": "#00714d", "primary-fixed": "#e3dfff",
+              "error-container": "#ffdad6", "on-primary-fixed-variant": "#372abf", "tertiary-container": "#744800",
+              "secondary-container": "#6cf8bb", "on-surface": "#191c1e", "error": "#ba1a1a",
+              "surface-bright": "#f7f9fb", "secondary-fixed": "#6ffbbe", "inverse-primary": "#c3c0ff",
+              "surface-container-highest": "#e0e3e5", "outline": "#777586", "on-secondary-fixed": "#002113",
+              "tertiary": "#553300", "surface-container-low": "#f2f4f6", "on-background": "#191c1e",
+              "on-secondary": "#ffffff", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#005236",
+              "outline-variant": "#c7c4d7", "on-tertiary-fixed-variant": "#653e00", "inverse-on-surface": "#eff1f3",
+              "surface-dim": "#d8dadc", "primary": "#2a14b4", "primary-container": "#4338ca",
+              "secondary": "#006c49", "surface-variant": "#e0e3e5"
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+            spacing: { "margin-mobile": "1rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter": "1.5rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "margin": "2rem" }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="/campuspilot-theme.css" />
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
