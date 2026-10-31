@@ -269,7 +269,7 @@ Potential future enhancements include:
 - [ ] Automated examination revision schedules.
 - [ ] Study analytics and productivity reports.
 - [ ] Voice-enabled academic assistance.
-- [ ] Push notifications for important deadlines.
+
 - [ ] Expanded role-based experiences for students, faculty, and administrators.
 
 Roadmap items should be marked complete only after the corresponding functionality has been implemented and tested.
